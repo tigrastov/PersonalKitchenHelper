@@ -1,0 +1,37 @@
+.orders-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.order-form input {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.order-item {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 6px;
+
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-recipes li {
+  margin: 6px 0;
+}
+
+.order-add {
+  margin-top: 10px;
+}
+
+
+.order-date{
+color: honeydew;
+}

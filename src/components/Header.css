@@ -1,0 +1,55 @@
+ 
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+
+.header {
+  background: yellow;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  
+}
+
+.nav-list {
+  display: flex;
+  gap: 60px;
+  list-style: none;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  margin-right: 200px;
+}
+
+
+  @media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;  /* переносим содержимое в колонку */
+    gap: 10px;
+  }
+
+  .nav-list {
+    gap: 30px; /* уменьшаем расстояние */
+  }
+}

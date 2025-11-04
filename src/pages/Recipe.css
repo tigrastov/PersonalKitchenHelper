@@ -1,0 +1,68 @@
+.recipes-page {
+padding: 20px;
+}
+
+
+.recipe-form {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
+
+}
+
+
+.recipe-list {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+
+.recipe-card {
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 12px;
+background: yellow;
+color: black;
+}
+
+
+.recipe-card-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+}
+
+
+.recipe-products {
+margin-top: 10px;
+}
+
+
+.recipe-product-item {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 6px;
+}
+
+
+.amount-input {
+width: 60px;
+}
+
+
+.delete-btn {
+background: none;
+border: none;
+color: red;
+cursor: pointer;
+font-size: 18px;
+}
+
+
+.unit-label {
+  margin-left: 4px;
+  opacity: 0.7;
+}

@@ -140,7 +140,7 @@ function Recipe() {
     .filter((r) => r.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
-    <div className="recipes-page">
+    <div className="page">
       <h1>Recipes</h1>
 
       {/* Поиск */}
@@ -175,7 +175,7 @@ function Recipe() {
 
       {/* Создание блюда */}
       <form className="recipe-form" onSubmit={handleCreateRecipe}>
-        <h>Новое блюдо</h>
+        <h3>Новое блюдо</h3>
         <input
           type="text"
           placeholder="Название блюда"
@@ -239,7 +239,7 @@ function Recipe() {
                   : ""}
               </span>
 
-              <button onClick={() => handleAddIngredient(r.id)}>Добавить</button>
+              <button onClick={() => handleAddIngredient(r.id)}>Добавить ингредиент</button>
             </div>
 
             {/* Список ингредиентов */}

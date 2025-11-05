@@ -9,7 +9,7 @@ function Products() {
   const [name, setName] = useState("");
   const [unit, setUnit] = useState("kg"); // изменено: type → unit
   const [products, setProducts] = useState([]);
-  const [search, setSearch] = useState(""); 
+  const [search, setSearch] = useState("");
 
   const productsRef = collection(db, "products");
 
@@ -29,7 +29,7 @@ function Products() {
     e.preventDefault();
     if (!name.trim()) return;
 
-    await addDoc(productsRef, { name, unit }); 
+    await addDoc(productsRef, { name, unit });
 
     setName("");
     setUnit("kg");
@@ -55,34 +55,48 @@ function Products() {
   );
 
   return (
-    <div className="products-page">
+    <div className="page">
+
       <h1>Товары</h1>
 
-      <input
-        className="search-input"
-        type="text"
-        placeholder="Поиск товара..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-
-      <form className="product-form" onSubmit={handleAdd}>
+      <div className="search-form">
+        <p>Поиск товара</p>
         <input
+          className="search-input"
           type="text"
-          placeholder="Название товара"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          placeholder="Поиск товара..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
+      </div>
 
-        <select value={unit} onChange={(e) => setUnit(e.target.value)}>
-          <option value="kg">Весовой (кг)</option>
-          <option value="pcs">Штучный (шт)</option>
-          <option value="l">Литраж (л)</option>
-        </select>
 
-        <button type="submit">Добавить</button>
-      </form>
 
+      <div className="add-product">
+        <p>Добавать товар</p>
+
+        <form className="add-product-form" onSubmit={handleAdd}>
+          <input
+            type="text"
+            placeholder="Название товара"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <select value={unit} onChange={(e) => setUnit(e.target.value)}>
+            <option value="kg">Весовой (кг)</option>
+            <option value="pcs">Штучный (шт)</option>
+            <option value="l">Литраж (л)</option>
+          </select>
+
+          <button type="submit">Добавить</button>
+        </form>
+      </div>
+
+
+      <div className="products">
+        <p>Список товаров</p>
+      </div>
       <ul className="product-list">
         {filtered.map((p) => (
           <li key={p.id}>

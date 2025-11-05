@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
@@ -6,15 +6,19 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <img src="/Logo.png" alt="App Logo" className="logo" />
-        <nav>
+
+        <nav className="nav">
           <ul className="nav-list">
-            <li><Link to="/">Orders</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/recipe">Recipe</Link></li>
+            <li><NavLink to="/">Orders</NavLink></li>
+            <li><NavLink to="/products">Products</NavLink></li>
+            <li><NavLink to="/recipe">Recipe</NavLink></li>
           </ul>
         </nav>
+
       </div>
     </header>
+
+
   );
 }
 

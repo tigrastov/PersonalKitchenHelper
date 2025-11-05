@@ -1,37 +1,100 @@
-.products-page {
-  padding: 20px;
+/* Общий контейнер страницы */
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 90px 16px 32px; /* 90px — чтобы не залезло под хедер */
+  text-align: center;
+  color: #fff;
 }
 
-.product-form {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+/* Заголовок */
+.page h1 {
+  margin-bottom: 24px;
+  font-size: 28px;
 }
 
-.product-form input,
-.product-form select {
-  padding: 8px;
+/* Блоки секций */
+.search-form,
+.add-product,
+.products {
+  margin-bottom: 32px;
+}
+
+.page p {
+  margin-bottom: 8px;
+  opacity: 0.8;
+  font-size: 15px;
+}
+
+/* Поля */
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #333;
+  color: #fff;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
+/* Кнопки */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffdb4d;
+}
+
+/* Список товаров */
 .product-list {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin: 0;
 }
 
 .product-list li {
+  background: #333;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+
   display: flex;
   justify-content: space-between;
-  padding: 6px 0;
-  border-bottom: 1px solid #ddd;
+  align-items: center;
 }
 
-.product-list button {
-  cursor: pointer;
+/* Кнопка удаления */
+.delete-btn {
+  background: none;
   border: none;
-  background: #ff4747;
-  color: white;
-  padding: 2px 8px;
-  border-radius: 4px;
+  color: #ff6666;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #ff4444;
+}
+
+/* ✅ Мобилка живёт хорошо */
+@media (max-width: 480px) {
+  .page {
+    padding: 80px 14px 24px;
+  }
+
+  .product-list li {
+    padding: 12px;
+    font-size: 14px;
+  }
 }

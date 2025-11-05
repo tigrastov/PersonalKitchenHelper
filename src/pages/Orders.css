@@ -1,37 +1,126 @@
-.orders-page {
-  max-width: 700px;
+.page {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 90px 16px 32px; /* место под хедер */
+  text-align: center;
+  color: #fff;
 }
 
-.order-form input {
-  margin-right: 10px;
-  padding: 5px;
+/* Заголовок */
+.orders-title h1 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* Поля и формы */
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #333;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Кнопка */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffdb4d;
+}
+
+/* Список заказов */
+.order-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
 }
 
 .order-item {
-  border: 1px solid #ddd;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 6px;
-
+  background: #333;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 22px;
+  text-align: left;
 }
 
+/* Заголовок заказа */
 .order-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
 }
 
-.order-recipes li {
-  margin: 6px 0;
+.order-header strong {
+  font-size: 18px;
 }
 
+.order-date {
+  opacity: 0.75;
+  margin-left: 6px;
+}
+
+/* Список блюд */
+.order-recipes li,
+.order-summary li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+/* Инпут количества блюд */
+.order-recipes input {
+  width: 60px;
+  text-align: center;
+  padding: 6px;
+  margin: 0 6px;
+}
+
+/* Кнопка удаления элемента/заказа */
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff6666;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #ff4444;
+}
+
+/* Блок добавления блюда */
 .order-add {
-  margin-top: 10px;
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
 }
 
+/* ✅ Mobile */
+@media (max-width: 480px) {
+  .page {
+    padding: 80px 14px 24px;
+  }
 
-.order-date{
-color: honeydew;
+  .order-item {
+    padding: 16px;
+  }
+
+  .order-recipes input {
+    width: 48px;
+  }
 }

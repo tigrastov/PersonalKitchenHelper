@@ -24,10 +24,15 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: #242424; /* если нужно сохранить фон */
+}
+.page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  text-align: center;
 }
 
 h1 {

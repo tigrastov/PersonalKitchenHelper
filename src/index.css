@@ -13,6 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -27,12 +30,17 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: #242424; /* если нужно сохранить фон */
+
+
+
 }
 .page {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px 16px;
   text-align: center;
+  background-color: #013220;
+  
 }
 
 h1 {

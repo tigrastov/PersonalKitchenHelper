@@ -1,16 +1,38 @@
 .page {
   max-width: 600px;
   margin: 0 auto;
-  padding: 90px 16px 32px; /* место под хедер */
+  padding: 90px 16px 32px;
+  /* место под хедер */
   text-align: center;
   color: #fff;
+
 }
 
 /* Заголовок */
 .orders-title h1 {
-  margin-bottom: 30px;
-  font-size: 28px;
+  margin-bottom: 300px;
+  font-size: 30px;
+  color: #FFE3B5;
 }
+
+
+.search-date {
+  padding: 14px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #333;
+  color: #FFE3B5;
+  font-size: 16px;
+  box-sizing: border-box;
+
+}
+
+.search-date p {
+  color: #FFE3B5;
+}
+
 
 /* Поля и формы */
 input,
@@ -21,24 +43,57 @@ select {
   border-radius: 8px;
   border: 1px solid #444;
   background: #333;
-  color: #fff;
+  color: #FFE3B5;
   font-size: 16px;
   box-sizing: border-box;
 }
 
+.search-date-input {
+  color: #FFE3B5;
+}
+
+
+
+.order-form {
+  padding: 14px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #333;
+  color: #FFE3B5;
+  font-size: 16px;
+  box-sizing: border-box;
+
+}
+
+.title-new-order {
+  color: #FFE3B5;
+
+  font-size: 15px;
+
+}
+
+.date-new-order {
+
+  color: #FFE3B5;
+
+}
+
 /* Кнопка */
-button {
+.btn-new-order {
   width: 100%;
   padding: 14px;
   border-radius: 8px;
   border: none;
-  background-color: #ffcc00;
-  color: #000;
+  background-color: #FFE3B5;
+  color: red;
+
   font-weight: 600;
   cursor: pointer;
 }
 
-button:hover {
+.btn-new-order:hover {
   background-color: #ffdb4d;
 }
 
@@ -47,6 +102,7 @@ button:hover {
   list-style: none;
   padding: 0;
   margin-top: 30px;
+  width: 100%;
 }
 
 .order-item {
@@ -94,21 +150,88 @@ button:hover {
 .delete-btn {
   background: none;
   border: none;
-  color: #ff6666;
-  font-size: 22px;
+  color: purple;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .delete-btn:hover {
-  color: #ff4444;
+  color: purple;
 }
 
 /* Блок добавления блюда */
 .order-add {
-  margin-top: 14px;
-  display: grid;
-  gap: 10px;
+
+  padding: 14px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #333;
+  color: #FFE3B5;
+  font-size: 16px;
+  box-sizing: border-box;
 }
+.order-add p {
+
+color: #FFE3B5;
+font-size: 25px;
+font-weight: bold;
+margin-left: 4px;
+padding: 10px 10px 10px 10px;
+
+
+}
+.select-catedory{
+  color: #FFE3B5;
+}
+.select-recipe{
+color: #FFE3B5;
+}
+
+.add-recipe-btn{
+background-color: #FFE3B5;
+color: red;
+}
+.order-summary{
+font-family: 'Caveat', sans-serif;
+font-size: 25px;
+color: white;
+
+background-color: #013220;
+border-radius: 8px;
+border: #FFE3B5 solid 1px;
+margin-bottom: 10px;
+
+}
+.order-header{
+background-color: #013220;
+border-radius: 8px;
+border: #FFE3B5 solid 1px;  
+padding: 10px 10px 10px 10px;
+
+
+color: white  ;
+
+}
+.order-date{
+  color: red;
+  font-size: 15px;
+  margin-left: 100px;
+
+
+}
+
+
+
+
+.order-recipes-container{
+  background-color: #013220;
+  border-radius: 8px;
+  border: #FFE3B5 solid 1px;
+  justify-content: col;
+}
+
 
 /* ✅ Mobile */
 @media (max-width: 480px) {

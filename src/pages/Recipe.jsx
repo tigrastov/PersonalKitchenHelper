@@ -141,7 +141,7 @@ function Recipe() {
 
   return (
     <div className="page">
-      <h1>Recipes</h1>
+      <h1>Рецепты</h1>
 
       {/* Поиск */}
       <input

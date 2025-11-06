@@ -9,9 +9,9 @@ function Header() {
 
         <nav className="nav">
           <ul className="nav-list">
-            <li><NavLink to="/">Orders</NavLink></li>
-            <li><NavLink to="/products">Products</NavLink></li>
-            <li><NavLink to="/recipe">Recipe</NavLink></li>
+            <li><NavLink to="/">Заказы</NavLink></li>
+            <li><NavLink to="/products">Продукты</NavLink></li>
+            <li><NavLink to="/recipe">Рецепты</NavLink></li>
           </ul>
         </nav>
 

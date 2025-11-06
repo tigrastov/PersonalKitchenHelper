@@ -57,7 +57,7 @@ function Products() {
   return (
     <div className="page">
 
-      <h1>Товары</h1>
+      <h1>Продукты</h1>
 
       <div className="search-form">
         <p>Поиск товара</p>

@@ -157,19 +157,28 @@ function Orders() {
       </div>
 
 
-      {/* Поиск по дате */}
-      <input
-        type="date"
-        value={searchDate}
-        onChange={(e) => setSearchDate(e.target.value)}
-        className="search-date-input"
-      />
+      <div className="search-date">
+        <p>Поиск заказа по дате</p>
+
+
+        {/* Поиск по дате */}
+        <input
+          type="date"
+          value={searchDate}
+          onChange={(e) => setSearchDate(e.target.value)}
+          className="search-date-input"
+        />
+
+      </div>
+
+
 
       {/* Создание нового заказа */}
       <form className="order-form" onSubmit={handleCreate}>
-        <input type="date" value={orderDate} onChange={(e) => setOrderDate(e.target.value)} />
+        <label className="title-new-order">Создание нового заказа</label>
+        <input type="date" value={orderDate} className="date-new-order" onChange={(e) => setOrderDate(e.target.value)} />
         <input type="text" placeholder="Название заказа" value={name} onChange={(e) => setName(e.target.value)} />
-        <button type="submit">Создать заказ</button>
+        <button className="btn-new-order" type="submit">Создать заказ</button>
       </form>
 
       <ul className="order-list">
@@ -182,27 +191,40 @@ function Orders() {
                 <button className="delete-btn" onClick={() => handleDeleteOrder(o.id)}>×</button>
               </div>
 
-              <ul className="order-recipes">
-                {o.items.map((item, i) => {
-                  const recipe = findRecipe(item.recipeId);
-                  return (
-                    <li key={i}>
-                      {recipe ? recipe.name : "???"} —{" "}
-                      <input type="number" min="1" value={item.qty} onChange={(e) => handleUpdateQty(o.id, i, e.target.value)} /> шт.
-                      <button onClick={() => handleDeleteItem(o.id, i)}>×</button>
-                    </li>
-                  );
-                })}
-              </ul>
 
-              <ul className="order-summary">
-                {calculateProductsForOrder(o).map((p) => (
-                  <li key={p.name}>{p.name} — {p.amount} {unitLabel(p.unit)}</li>
-                ))}
-              </ul>
+              <div className="order-recipes-container">
+                <p>Блюда:</p>
+                <ul className="order-recipes">
+                  {o.items.map((item, i) => {
+                    const recipe = findRecipe(item.recipeId);
+                    return (
+                      <li key={i}>
+                        {recipe ? recipe.name : "???"} —{" "}
+                        <input type="number" min="1" value={item.qty} onChange={(e) => handleUpdateQty(o.id, i, e.target.value)} /> шт.
+                        <button onClick={() => handleDeleteItem(o.id, i)}>×</button>
+                      </li>
+                    );
+                  })}
+                </ul>
+
+              </div>
+
+
+              <div>
+                <p>Продукты:</p>
+                <ul className="order-summary">
+                  {calculateProductsForOrder(o).map((p) => (
+                    <li key={p.name}>{p.name} — {p.amount} {unitLabel(p.unit)}</li>
+                  ))}
+                </ul>
+              </div>
+             
 
               <div className="order-add">
-                <select value={addForm[o.id]?.category || ""} onChange={(e) => updateAddForm(o.id, "category", e.target.value)}>
+
+                <p>Добавление блюда к заказу</p>
+
+                <select className="select-catedory" value={addForm[o.id]?.category || ""} onChange={(e) => updateAddForm(o.id, "category", e.target.value)}>
                   <option value="">Категория</option>
                   <option value="all">Все</option>
                   <option value="salad">Салаты</option>
@@ -213,7 +235,7 @@ function Orders() {
                   <option value="other">Другое</option>
                 </select>
 
-                <select value={addForm[o.id]?.recipeId || ""} onChange={(e) => updateAddForm(o.id, "recipeId", e.target.value)}>
+                <select className="select-recipe" value={addForm[o.id]?.recipeId || ""} onChange={(e) => updateAddForm(o.id, "recipeId", e.target.value)}>
                   <option value="">Блюдо</option>
                   {recipes
                     .filter((r) =>
@@ -229,7 +251,7 @@ function Orders() {
                 </select>
 
                 <input type="number" min="1" placeholder="Кол-во" value={addForm[o.id]?.qty || ""} onChange={(e) => updateAddForm(o.id, "qty", e.target.value)} />
-                <button onClick={() => handleAddItem(o.id)}>Добавить</button>
+                <button className="add-recipe-btn" onClick={() => handleAddItem(o.id)}>Добавить</button>
               </div>
             </li>
           ))}

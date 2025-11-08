@@ -1,0 +1,162 @@
+.search-input-recipe{
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  color: #013220;
+  width: 200px;
+  background-color: #FFE3B5 
+}
+
+.category-filter-button{
+    background-color:#013220;
+    color: #FFE3B5;
+}
+.filter-active{
+color: red;
+background-color: #013220;
+border: red 3px solid;
+}
+.new-recipe-form{
+    margin-top: 10px;
+    border: #FFE3B5 1px solid;
+    border-radius: 15px;
+}
+
+.new-recipe-form h3{
+color: #FFE3B5;
+}
+.new-recipe-input{
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: -10px;
+  border: none;
+
+  font-size: 16px;
+  outline: none;
+  color: #013220;
+  width: 300px;
+  background-color: #FFE3B5 
+    
+}
+
+.recipe-category{
+  background-color: #013220;
+  color: #FFE3B5;
+  border: #FFE3B5 1px solid;
+
+  font-size: 16px;
+  outline: none;
+  width: 200px;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+.create-recipe-btn{
+    color: red;
+    border: red 1px solid;
+    background-color: #013220;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.recipes-list h2{
+    color: #FFE3B5;
+}
+.recipes-list {
+    color: #FFE3B5;
+    border: #FFE3B5 1px solid;
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 10px;
+   
+}
+
+.recipe-card{
+    border: #FFE3B5 1px solid;
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FFE3B5;
+    color: #013220;
+}
+
+.product-search-in-recipe{
+    font-size: 16px;
+    padding: 10px;
+
+    background-color: #013220;
+    color: #FFE3B5;
+    border: #FFE3B5 1px solid;
+}
+.select-product-in-recipe{
+    font-size: 16px;
+    border: #FFE3B5 1px solid;
+    padding: 10px;
+
+    background-color: #013220;
+    color: #FFE3B5;
+}
+
+
+.ingredient-add{
+    background-color: #013220;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.qntt-product-selector{
+    font-size: 16px;
+    padding: 10px;
+
+    background-color: #013220;
+    color: #FFE3B5;
+    width: 50px;
+    border: #FFE3B5 1px solid;
+    margin: 10px;
+}
+.add-ingredient-btn{
+    color: red;
+    background-color: #013220;
+    border: red 1px solid;
+}
+
+.ingredients-list{
+border: #013220 1px solid;
+border-radius: 15px;
+margin-top: 10px;
+padding: 10px;
+color: #013220;
+
+}
+.ingredients-list p{
+    font-weight: bold;
+}
+.ingredient-item{
+    color: red;
+    padding: 10px;
+
+}
+.input-qtt-ingrdts{
+    width: 30px;
+    padding: 10px;
+    margin: 10px;
+}
+.delete-ingredient-btn{
+    color: red;
+    background-color: #FFE3B5;
+    border: red 1px solid;
+    margin: 10px;
+}
+.delete-recipe{
+    background-color: red;
+    color: white;
+}
+@media(max-width: 480px){
+  .search-form{
+    max-width: 300px;
+  }
+}

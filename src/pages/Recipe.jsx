@@ -163,9 +163,9 @@ function Recipe() {
           ["dessert", "Десерты"],
           ["other", "Другое"],
         ].map(([key, label]) => (
-          <button
+          <button 
             key={key}
-            className={filter === key ? "active" : ""}
+            className={filter === key ? "filter-active" : "category-filter-button"}
             onClick={() => setFilter(key)}
           >
             {label}
@@ -176,7 +176,7 @@ function Recipe() {
       {/* Создание блюда */}
       <form className="new-recipe-form" onSubmit={handleCreateRecipe}>
         <h3>Новое блюдо</h3>
-        <input
+        <input className="new-recipe-input"
           type="text"
           placeholder="Название блюда"
           value={recipeName}
@@ -192,11 +192,13 @@ function Recipe() {
           <option value="other">Другое</option>
         </select>
 
-        <button className="create-recipe-btn" unit="submit">Создать</button>
+        <button className="create-recipe-btn" unit="submit"> + Создать</button>
       </form>
 
       {/* Список блюд */}
       <div className="recipes-list">
+       <h2>Список блюд</h2>
+
         {filtered.map((r) => (
           <div className="recipe-card" key={r.id}>
             <h3>
@@ -207,13 +209,13 @@ function Recipe() {
             <div className="ingredient-add">
               <input
                 type="text"
-                className="product-search"
+                className="product-search-in-recipe"
                 placeholder="Поиск продукта"
                 value={productSearch}
                 onChange={(e) => setProductSearch(e.target.value)}
               />
 
-              <select className="select-product"
+              <select className="select-product-in-recipe"
                 value={selectedProduct}
                 onChange={(e) => setSelectedProduct(e.target.value)}
               >
@@ -233,23 +235,25 @@ function Recipe() {
                 value={qty}
                 onChange={(e) => setQty(e.target.value)}
               />
+
               <span className="unit-label">
                 {selectedProduct
                   ? unitLabel(findProduct(selectedProduct)?.unit)
                   : ""}
               </span>
 
-              <button className="add-ingredient-btn" onClick={() => handleAddIngredient(r.id)}>Добавить ингредиент</button>
+              <button className="add-ingredient-btn" onClick={() => handleAddIngredient(r.id)}>+ Добавить ингредиент</button>
             </div>
 
             {/* Список ингредиентов */}
             <ul className="ingredients-list">
+              <p>Ингредиенты:</p>
               {r.ingredients.map((ing, i) => {
                 const prod = findProduct(ing.productId);
                 return (
-                  <li key={i}>
+                  <li className="ingredient-item" key={i}>
                     {prod ? prod.name : "???"} —{" "}
-                    <input
+                    <input className="input-qtt-ingrdts"
                       type="number"
                       step="0.01"
                       value={ing.qty}

@@ -35,11 +35,12 @@ body {
 
 }
 .page {
-  max-width: 600px;
+width: 100%;
   margin: 0 auto;
-  padding: 20px 16px;
+  padding: 100px 20px 16px;
   text-align: center;
   background-color: #013220;
+  
   
 }
 
@@ -78,4 +79,14 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
+
+}
+
+
+@media (max-width: 480px) {
+  .page {
+    padding: 80px 14px 24px;
+  }
+
 }

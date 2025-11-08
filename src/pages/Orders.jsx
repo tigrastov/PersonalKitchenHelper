@@ -50,6 +50,13 @@ function Orders() {
     }
   };
 
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString("ru-RU");
+  }
+
+
+
   const loadAll = async () => {
     const oSnap = await getDocs(ordersRef);
     const rSnap = await getDocs(recipesRef);
@@ -152,16 +159,14 @@ function Orders() {
 
   return (
     <div className="page">
-      <div className="orders-title">
-        <h1>Заказы</h1>
-      </div>
+
+      <h1>Заказы</h1>
 
 
-      <div className="search-date">
+      {/* Поиск по дате */}
+      <div className="search-date-form">
         <p>Поиск заказа по дате</p>
 
-
-        {/* Поиск по дате */}
         <input
           type="date"
           value={searchDate}
@@ -181,14 +186,19 @@ function Orders() {
         <button className="btn-new-order" type="submit">Создать заказ</button>
       </form>
 
+
+      {/* Заказы */}
       <ul className="order-list">
         {orders
           .filter((o) => !searchDate || o.date === searchDate)
           .map((o) => (
             <li key={o.id} className="order-item">
               <div className="order-header">
-                <strong>{o.name}</strong> <span className="order-date">({o.date})</span>
-                <button className="delete-btn" onClick={() => handleDeleteOrder(o.id)}>×</button>
+                <strong className="order-name">{o.name}</strong>
+                {/* <span className="order-date">({o.date})</span> */}
+                <span className="order-date">({formatDate(o.date)})</span>
+
+                <button className="delete-btn" onClick={() => handleDeleteOrder(o.id)}>Удалить заказ</button>
               </div>
 
 
@@ -206,7 +216,6 @@ function Orders() {
                     );
                   })}
                 </ul>
-
               </div>
 
 
@@ -218,7 +227,7 @@ function Orders() {
                   ))}
                 </ul>
               </div>
-             
+
 
               <div className="order-add">
 

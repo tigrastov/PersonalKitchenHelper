@@ -145,9 +145,9 @@ function Recipe() {
 
       {/* Поиск */}
       <input
-        className="search-input"
+        className="search-input-recipe"
         type="text"
-        placeholder="Поиск рецепта..."
+        placeholder="Поиск рецепта"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
@@ -174,7 +174,7 @@ function Recipe() {
       </div>
 
       {/* Создание блюда */}
-      <form className="recipe-form" onSubmit={handleCreateRecipe}>
+      <form className="new-recipe-form" onSubmit={handleCreateRecipe}>
         <h3>Новое блюдо</h3>
         <input
           type="text"
@@ -183,7 +183,7 @@ function Recipe() {
           onChange={(e) => setRecipeName(e.target.value)}
         />
 
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <select className="recipe-category" value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="salad">Салаты</option>
           <option value="hot">Горячее</option>
           <option value="snack">Закуски</option>
@@ -192,7 +192,7 @@ function Recipe() {
           <option value="other">Другое</option>
         </select>
 
-        <button unit="submit">Создать</button>
+        <button className="create-recipe-btn" unit="submit">Создать</button>
       </form>
 
       {/* Список блюд */}
@@ -208,12 +208,12 @@ function Recipe() {
               <input
                 type="text"
                 className="product-search"
-                placeholder="Поиск продукта..."
+                placeholder="Поиск продукта"
                 value={productSearch}
                 onChange={(e) => setProductSearch(e.target.value)}
               />
 
-              <select
+              <select className="select-product"
                 value={selectedProduct}
                 onChange={(e) => setSelectedProduct(e.target.value)}
               >
@@ -226,7 +226,7 @@ function Recipe() {
               </select>
 
 
-              <input
+              <input className="qntt-product-selector"
                 type="number"
                 step="0.01"
                 placeholder="Кол-во"
@@ -239,7 +239,7 @@ function Recipe() {
                   : ""}
               </span>
 
-              <button onClick={() => handleAddIngredient(r.id)}>Добавить ингредиент</button>
+              <button className="add-ingredient-btn" onClick={() => handleAddIngredient(r.id)}>Добавить ингредиент</button>
             </div>
 
             {/* Список ингредиентов */}
@@ -261,7 +261,7 @@ function Recipe() {
                       {prod ? unitLabel(prod.unit) : ""}
                     </span>
 
-                    <button onClick={() => handleDeleteIngredient(r.id, i)}>
+                    <button  className="delete-ingredient-btn"onClick={() => handleDeleteIngredient(r.id, i)}>
                       ×
                     </button>
                   </li>

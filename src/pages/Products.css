@@ -1,101 +1,105 @@
-/* Общий контейнер страницы */
-.page {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 90px 16px 32px; /* 90px — чтобы не залезло под хедер */
-  text-align: center;
-  color: #fff;
+
+
+.page h1{
+margin-top: -50px;
+font-size: 30px;
+color: #FFE3B5;
 }
 
-/* Заголовок */
-.page h1 {
-  margin-bottom: 24px;
-
-
-}
-
-/* Блоки секций */
-.search-form,
-.add-product,
-.products {
-  margin-bottom: 32px;
-}
-
-.page p {
-  margin-bottom: 8px;
-  opacity: 0.8;
-  font-size: 15px;
-}
-
-/* Поля */
-input,
-select {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background: #333;
-  color: #fff;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-/* Кнопки */
-button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 8px;
-  border: none;
-  background-color: #ffcc00;
-  color: #000;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ffdb4d;
-}
-
-/* Список товаров */
-.product-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.product-list li {
-  background: #333;
-  padding: 14px 16px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-
-  display: flex;
-  justify-content: space-between;
+.search-form{
+  background-color: #FFE3B5;
+  max-width: 300px;
   align-items: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: #013220;
 }
-
-/* Кнопка удаления */
-.delete-btn {
-  background: none;
+.search-product-input{
+  padding: 10px;
+  margin-bottom: 10px;
   border: none;
-  color: #ff6666;
-  font-size: 24px;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  color: #FFE3B5;
+  width: 70%;
+  background-color: #013220
+}
+
+
+.add-product{
+   background-color: #FFE3B5;
+  max-width: 300px;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: #013220;
+}
+.add-product-input{
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  color: #FFE3B5;
+  width: 70%;
+  background-color: #013220
+}
+.select-type-product{
+padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  color: #FFE3B5;
+  width: 76%;
+  background-color: #013220
+}
+
+.add-product-btn{
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  color: red;
+  width: 77%;
+  background-color: #013220
+}
+
+.products{
+  border: #FFE3B5 1px solid;
+  max-width: 300px;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  color: #FFE3B5;
+ margin-top: 15px;
+}
+
+.product-list{
+  list-style: none;   /* убираем точки */
+  padding: 10px;         /* убираем отступ слева */
+  margin: 0;
+  text-align: left;
+
+}
+.del-prod-btn{
+ margin-right: 0px;
+  color: red;
+  background: transparent;
+  border: none;
+  font-size: 30px;
   cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
 }
 
-.delete-btn:hover {
-  color: #ff4444;
-}
-
-/* ✅ Мобилка живёт хорошо */
-@media (max-width: 480px) {
-  .page {
-    padding: 80px 14px 24px;
-  }
-
-  .product-list li {
-    padding: 12px;
-    font-size: 14px;
+@media(max-width: 480px){
+  .search-form{
+    max-width: 300px;
   }
 }

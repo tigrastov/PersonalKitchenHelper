@@ -62,9 +62,9 @@ function Products() {
       <div className="search-form">
         <p>Поиск товара</p>
         <input
-          className="search-input"
+          className="search-product-input"
           type="text"
-          placeholder="Поиск товара..."
+          placeholder="Введите название товара"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -76,37 +76,37 @@ function Products() {
         <p>Добавать товар</p>
 
         <form className="add-product-form" onSubmit={handleAdd}>
-          <input
+          <input className="add-product-input"
             type="text"
             placeholder="Название товара"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
 
-          <select value={unit} onChange={(e) => setUnit(e.target.value)}>
+          <select className="select-type-product" value={unit} onChange={(e) => setUnit(e.target.value)}>
             <option value="kg">Весовой (кг)</option>
             <option value="pcs">Штучный (шт)</option>
             <option value="l">Литраж (л)</option>
           </select>
 
-          <button type="submit">Добавить</button>
+          <button className="add-product-btn" type="submit"> + Добавить товар</button>
         </form>
       </div>
 
 
       <div className="products">
         <p>Список товаров</p>
+        <ul className="product-list">
+          {filtered.map((p) => (
+            <li key={p.id}>
+              {p.name} — {formatUnit(p.unit)}
+              <button className= "del-prod-btn" onClick={() => handleDelete(p.id)} >
+                ×
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className="product-list">
-        {filtered.map((p) => (
-          <li key={p.id}>
-            {p.name} — {formatUnit(p.unit)}
-            <button onClick={() => handleDelete(p.id)} className="delete-btn">
-              ×
-            </button>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

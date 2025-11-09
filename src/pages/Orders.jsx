@@ -67,7 +67,9 @@ function Orders() {
     const productsList = pSnap.docs.map((d) => ({ id: d.id, ...d.data() }));
 
     // ✅ Сортировка по дате — новые сначала
-    ordersList.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+    // ordersList.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+    ordersList.sort((a, b) => new Date(a.date) - new Date(b.date));
+
 
     setOrders(ordersList);
     setRecipes(recipesList);
@@ -182,13 +184,14 @@ function Orders() {
       <form className="order-form" onSubmit={handleCreate}>
         <label className="title-new-order">Создание нового заказа</label>
         <input type="date" value={orderDate} className="date-new-order" onChange={(e) => setOrderDate(e.target.value)} />
-        <input type="text" placeholder="Название заказа" value={name} onChange={(e) => setName(e.target.value)} />
-        <button className="btn-new-order" type="submit">Создать заказ</button>
+        <input className="name-new-order" type="text" placeholder="Название заказа" value={name} onChange={(e) => setName(e.target.value)} />
+        <button className="btn-new-order" type="submit">+ Создать заказ</button>
       </form>
 
-
+      <h2>Список заказов</h2>
       {/* Заказы */}
       <ul className="order-list">
+
         {orders
           .filter((o) => !searchDate || o.date === searchDate)
           .map((o) => (
@@ -198,20 +201,20 @@ function Orders() {
                 {/* <span className="order-date">({o.date})</span> */}
                 <span className="order-date">({formatDate(o.date)})</span>
 
-                <button className="delete-btn" onClick={() => handleDeleteOrder(o.id)}>Удалить заказ</button>
+                <button className="delete-order-btn" onClick={() => handleDeleteOrder(o.id)}>Удалить заказ</button>
               </div>
 
 
               <div className="order-recipes-container">
-                <p>Блюда:</p>
+                <p>Блюда</p>
                 <ul className="order-recipes">
                   {o.items.map((item, i) => {
                     const recipe = findRecipe(item.recipeId);
                     return (
                       <li key={i}>
                         {recipe ? recipe.name : "???"} —{" "}
-                        <input type="number" min="1" value={item.qty} onChange={(e) => handleUpdateQty(o.id, i, e.target.value)} /> шт.
-                        <button onClick={() => handleDeleteItem(o.id, i)}>×</button>
+                        <input className="qty-person-input" type="number" min="1" value={item.qty} onChange={(e) => handleUpdateQty(o.id, i, e.target.value)} /> шт.
+                        <button className="delete-item-recipe-btn" onClick={() => handleDeleteItem(o.id, i)}>×</button>
                       </li>
                     );
                   })}
@@ -229,9 +232,10 @@ function Orders() {
               </div>
 
 
+              <p>Добавление блюда к заказу</p>
               <div className="order-add">
 
-                <p>Добавление блюда к заказу</p>
+
 
                 <select className="select-catedory" value={addForm[o.id]?.category || ""} onChange={(e) => updateAddForm(o.id, "category", e.target.value)}>
                   <option value="">Категория</option>
@@ -259,8 +263,8 @@ function Orders() {
                     ))}
                 </select>
 
-                <input type="number" min="1" placeholder="Кол-во" value={addForm[o.id]?.qty || ""} onChange={(e) => updateAddForm(o.id, "qty", e.target.value)} />
-                <button className="add-recipe-btn" onClick={() => handleAddItem(o.id)}>Добавить</button>
+                <input className="add-recipe-qty" type="number" min="1" placeholder="Кол-во" value={addForm[o.id]?.qty || ""} onChange={(e) => updateAddForm(o.id, "qty", e.target.value)} />
+                <button className="add-recipe-btn" onClick={() => handleAddItem(o.id)}>+ Добавить блюдо</button>
               </div>
             </li>
           ))}

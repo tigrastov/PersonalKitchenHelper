@@ -1,0 +1,187 @@
+.search-date-form{
+    border: #FFE3B5 1px solid;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #013220;
+    color: #FFE3B5;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.page h2{
+    color: #FFE3B5;
+}
+.search-date-input{
+    padding: 10px;
+    border: #FFE3B5 1px solid;
+    border-radius: 10px;
+}
+
+.order-form{
+   border: #FFE3B5 1px solid;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #013220;
+    color: #FFE3B5;
+    width: 300px;
+    display: block;
+    margin: 0 auto; 
+    margin-top: 10px;
+}
+
+.date-new-order{
+   padding: 10px;
+    border: #FFE3B5 1px solid;
+     width: 200px;
+ 
+}
+.name-new-order{
+    padding: 10px;
+    border: #FFE3B5 1px solid; 
+    width: 200px;
+}
+.btn-new-order{
+    background-color: #013220;
+    color: red;
+    border: red 1px solid;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+
+.order-list h2{
+color: #FFE3B5;
+}
+.order-list {
+
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0 auto; /* на случай, если сам ul нужно центрировать */
+}
+
+.order-item {
+  border: #FFE3B5 1px solid;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #013220;
+  color: #FFE3B5;
+
+  /* нужно вот это ↓ */
+  width: 90%;        /* или 70% или 600px — выбирай */
+
+}
+
+.order-header{
+    margin: 10px;
+    border: #FFE3B5 1px solid;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+align-items: center;
+}
+.order-name{
+    color: red;
+}
+.delete-order-btn{
+    color: red;
+    border: red 1px solid;
+    border-radius: 10px;
+    background-color: #013220;
+    margin: 10px;
+    width: 200px;
+}
+.order-recipes-container{
+    margin: 10px;
+    border: #FFE3B5 1px solid;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   align-items: center;
+}
+
+.order-recipes{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+.qty-person-input{
+    width: 40px;
+}
+.delete-item-recipe-btn{
+    color: red;
+    border-radius: 10px;
+    background-color: #013220;
+    font-size: 20px;
+   
+}
+
+
+.order-summary{
+    border: #FFE3B5 1px solid;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    background-color: #013220;
+    color: white;
+    list-style: none;
+font-family: 'Caveat', sans-serif;
+
+font-size: 20px;
+}
+
+.order-add{
+    background-color: #013220;
+    color: red;
+    border: red 1px solid;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.select-catedory{
+    background-color: #FFE3B5;
+    color: #013220;
+}
+.select-recipe{
+   background-color: #FFE3B5;
+    color: #013220; 
+}
+.add-recipe-qty{
+   background-color: #FFE3B5;
+    color: #013220;  
+}
+.add-recipe-btn{
+    color: red;
+    background-color: #013220;
+    border: red 1px solid;
+    border-radius: 10px;
+}
+
+
+@media(max-width: 600px){
+   .order-add{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+   }
+
+}

@@ -247,12 +247,12 @@ function Recipe() {
 
             {/* Список ингредиентов */}
             <ul className="ingredients-list">
-              <p>Ингредиенты:</p>
+              <p>Ингредиенты</p>
               {r.ingredients.map((ing, i) => {
                 const prod = findProduct(ing.productId);
                 return (
                   <li className="ingredient-item" key={i}>
-                    {prod ? prod.name : "???"} —{" "}
+                    {prod ? prod.name : "???"} {" "}
                     <input className="input-qtt-ingrdts"
                       type="number"
                       step="0.01"

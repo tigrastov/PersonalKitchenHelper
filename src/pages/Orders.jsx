@@ -211,10 +211,10 @@ function Orders() {
                   {o.items.map((item, i) => {
                     const recipe = findRecipe(item.recipeId);
                     return (
-                      <li key={i}>
+                      <li className="order-recipe-item" key={i}>
                         {recipe ? recipe.name : "???"} —{" "}
                         <input className="qty-person-input" type="number" min="1" value={item.qty} onChange={(e) => handleUpdateQty(o.id, i, e.target.value)} /> шт.
-                        <button className="delete-item-recipe-btn" onClick={() => handleDeleteItem(o.id, i)}>×</button>
+                        <button  onClick={() => handleDeleteItem(o.id, i)}>×</button>
                       </li>
                     );
                   })}
@@ -226,7 +226,7 @@ function Orders() {
                 <p>Продукты:</p>
                 <ul className="order-summary">
                   {calculateProductsForOrder(o).map((p) => (
-                    <li key={p.name}>{p.name} — {p.amount} {unitLabel(p.unit)}</li>
+                    <li key={p.name}>{p.name} = {p.amount} {unitLabel(p.unit)}</li>
                   ))}
                 </ul>
               </div>

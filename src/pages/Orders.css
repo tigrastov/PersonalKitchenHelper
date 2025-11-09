@@ -69,7 +69,7 @@ color: #FFE3B5;
 }
 
 .order-item {
-  border: #FFE3B5 1px solid;
+  border: red 2px solid;
   padding: 10px;
   border-radius: 10px;
   background-color: #013220;
@@ -111,10 +111,21 @@ align-items: center;
 }
 
 .order-recipes{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 3px;
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  list-style: none;
+  gap: 12px;
+  padding: 10px;
+  
+}
+
+
+.order-recipe-item{
+   align-items: center;
+}
+.order-recipe-item button{
+color: red;
+background: none;
 }
 .qty-person-input{
     width: 40px;
@@ -183,5 +194,14 @@ font-size: 20px;
     flex-direction: column;
     gap: 3px;
    }
+   .order-recipes{
+    display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  gap: 12px;
+  font-size: 12px
+
+
+}
+
 
 }

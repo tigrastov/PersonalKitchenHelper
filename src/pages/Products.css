@@ -6,23 +6,30 @@ color: #FFE3B5;
 }
 
 .search-form{
-  background-color: #FFE3B5;
+  background-color: #013220;
   max-width: 300px;
   align-items: center;
   margin: 0 auto;
   border-radius: 5px;
   color: #013220;
 }
+
+.search-form p{
+  color: #FFE3B5;
+}
+
+
 .search-product-input{
   padding: 10px;
   margin-bottom: 10px;
-  border: none;
   border-radius: 5px;
   font-size: 16px;
   outline: none;
   color: #FFE3B5;
   width: 70%;
-  background-color: #013220
+  background-color: #013220;
+  border: #FFE3B5 1px solid;
+
 }
 
 
